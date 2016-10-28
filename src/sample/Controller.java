@@ -7,6 +7,7 @@ import java.awt.*;
 import java.io.*;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.control.TextArea;
@@ -46,7 +47,13 @@ public class Controller extends Component {
     }
 
     public void onAbout(){
-        System.out.println("Taha");
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("About");
+        alert.setHeaderText("Información");
+        alert.setContentText("Para editar el texto todas las \nheramientas estan en el menu \"EDITA\"");
+        //esta opcion es para permitir si la ventana se pueda ampliar o no (false=no, true que si)
+        alert.setResizable(false);
+        alert.showAndWait();
     }
 
     public void tamanyPrimer (ActionEvent actionEvent){
@@ -82,7 +89,7 @@ public class Controller extends Component {
 
         String linia ="";
         String texto ="";
-
+        //nos abre una ventana para qwue podamos seleccionar el fitxero
         JFileChooser file = new JFileChooser();
         file.getName();
         file.showOpenDialog(this);
