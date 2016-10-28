@@ -5,6 +5,8 @@ import javafx.event.ActionEvent;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
+
+import javafx.fxml.FXML;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.control.TextArea;
@@ -13,7 +15,7 @@ import javafx.scene.control.TextArea;
 
 public class Controller extends Component {
 
-
+    @FXML
     public TextArea textArea;
     private int tamany = 12;
     private String font = "Arial";
@@ -23,8 +25,7 @@ public class Controller extends Component {
     }
 
     public void Deshacer(ActionEvent actionEvent) {
-        textArea.undo();
-    }
+        textArea.undo();    }
 
     public void Pegar(ActionEvent actionEvent) {
         textArea.paste();
